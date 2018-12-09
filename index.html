@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+    ul {
+    list-style: none;
+    }
+    .wrap {
+        position: relative;
+    }
+    .wrap ul {
+        margin-bottom: 50px;
+    }
+    .wrap ul li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .wrap ul li:last-child {
+        margin-right: 0;
+    }
+    .wrap ul li{
+        margin-right: 50px;
+        color: #626262;
+        padding: 5px 0;
+        font-weight: 400;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+    }
+    .wrap ul li:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .wrap ul li:hover {
+        border-bottom: 2px solid #e31d3b;
+    }
+    .text {
+        position: absolute;
+    }
+    .text ul li {
+        width: 500px;
+        color: #626262;
+    }
+    .tap_con {
+        position: absolute;
+        left: 0;
+        top: 0; 
+        opacity: 0;
+    }
+    .tap_con.on {
+        opacity: 1;
+    }
+</style>
+<body>
+<div class="wrap">
+    <ul>
+        <li>CREATIVITY</li>
+        <li>INNOVATION</a></li>
+        <li>POINT OF VIEW</li>
+    </ul>
+</div>
+<div class="text">
+    <div class="tap_con on">
+        <ul>
+            <li>Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry’s standard dummy.</li>
+        </ul>
+    </div>
+    <div class="tap_con">
+        <ul>
+            <li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</li>
+        </ul>
+    </div>
+    <div class="tap_con">
+        <ul>
+            <li>Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+       $('.wrap ul li').click(function(){
+           var _this = $(this);
+           var _thisIdx = $(this).index();
+           $('.text .tap_con').removeClass('on');
+           $('.text .tap_con').eq(_thisIdx).addClass('on');
+       });
+    });
+</script>
+</body>
+</html>
